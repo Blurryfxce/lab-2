@@ -1,13 +1,10 @@
 class Book extends Item {
     private String author;
 
-    // Конструктор
     public Book(String title, String author) {
         super(title);
         this.author = author;
     }
-
-    // Геттер та сеттер для автора
 
     @Override
     public void borrowItem() {
