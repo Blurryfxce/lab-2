@@ -25,4 +25,8 @@ class Patron {
     public List<Item> getBorrowedItems() {
         return borrowedItems;
     }
+
+    public String getName() {
+        return name;
+    }
 }
