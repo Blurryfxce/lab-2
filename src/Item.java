@@ -2,12 +2,20 @@ import java.util.UUID;
 abstract class Item {
     private String title;
     private String uniqueID;
-    private boolean isBorrowed;
+    public boolean isBorrowed;
 
     public Item(String title) {
         this.title = title;
         this.uniqueID = UUID.randomUUID().toString();
         this.isBorrowed = false;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setBorrowed(boolean borrowed) {
+        isBorrowed = borrowed;
     }
 
     public abstract void borrowItem();
