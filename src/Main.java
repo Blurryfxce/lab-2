@@ -1,17 +1,41 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Створення об'єктів Book та DVD
+        Book book1 = new Book("The Catcher in the Rye", "J.D. Salinger");
+        DVD dvd1 = new DVD("Inception", 148);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Створення об'єкта Patron
+        Patron patron1 = new Patron("John Doe", "ID001");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        // Створення об'єкта Library
+        Library library = new Library();
+
+        // Додавання предметів до бібліотеки
+        library.add(book1);
+        library.add(dvd1);
+
+        // Реєстрація читача
+        library.registerPatron(patron1);
+
+        // Виведення доступних предметів
+        System.out.println("Доступні предмети:");
+        library.listAvailable();
+
+        // Взяття в борг та повернення предметів
+        library.lendItem(patron1, book1);
+        library.lendItem(patron1, dvd1);
+
+        // Виведення взятих в борг предметів
+        System.out.println("Взяті в борг предмети:");
+        library.listBorrowed();
+
+        // Повернення предмету
+        library.returnItem(patron1, book1);
+
+        // Виведення взятих в борг предметів після повернення
+        System.out.println("Взяті в борг предмети після повернення:");
+        library.listBorrowed();
+
     }
 }
